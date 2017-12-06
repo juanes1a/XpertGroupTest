@@ -22,7 +22,6 @@ namespace XpertGroup.Test.Services.DependencyResolution.Operator
                 Component.For<IOperator>().ImplementedBy<Application.Operator.Operator>().Named("Operator")
                     .LifestylePerWebRequest()
                 );
-
         }
     }
 }

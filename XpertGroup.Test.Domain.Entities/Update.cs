@@ -39,7 +39,7 @@ namespace XpertGroup.Test.Domain.Entities
         /// <value>
         /// The value.
         /// </value>
-        public int Value { get; set; }
+        public long Value { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Update"/> class.
@@ -47,11 +47,12 @@ namespace XpertGroup.Test.Domain.Entities
         /// <param name="coordinateX">The coordinate x.</param>
         /// <param name="coordinateY">The coordinate y.</param>
         /// <param name="coordinateZ">The coordinate z.</param>
-        public Update(int coordinateX, int coordinateY, int coordinateZ)
+        public Update(int coordinateX, int coordinateY, int coordinateZ, long value)
         {
             this.CoordinateX = coordinateX;
             this.CoordinateY = coordinateY;
             this.CoordinateZ = coordinateZ;
+            this.Value = value;
         }
     }
 }

@@ -9,40 +9,40 @@ namespace XpertGroup.Test.Domain.Entities
     public class Query
     {
         /// <summary>
-        /// Gets or sets the xcoordinates.
+        /// Gets or sets the coordinates x.
         /// </summary>
         /// <value>
-        /// The xcoordinates.
+        /// The coordinates x.
         /// </value>
-        public int[] Xcoordinates { get; set; }
+        public int[] CoordinatesX { get; set; }
 
         /// <summary>
-        /// Gets or sets the ycoordinates.
+        /// Gets or sets the coordinates y.
         /// </summary>
         /// <value>
-        /// The ycoordinates.
+        /// The coordinates y.
         /// </value>
-        public int[] Ycoordinates { get; set; }
+        public int[] CoordinatesY { get; set; }
 
         /// <summary>
-        /// Gets or sets the zcoordinates.
+        /// Gets or sets the coordinates z.
         /// </summary>
         /// <value>
-        /// The zcoordinates.
+        /// The coordinates z.
         /// </value>
-        public int[] Zcoordinates { get; set; }
+        public int[] CoordinatesZ { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Query"/> class.
         /// </summary>
-        /// <param name="Xcoordinates">The xcoordinates.</param>
-        /// <param name="Ycoordinates">The ycoordinates.</param>
-        /// <param name="Zcoordinates">The zcoordinates.</param>
-        public Query(int[] Xcoordinates, int[] Ycoordinates, int[] Zcoordinates)
+        /// <param name="coordinatesX">The coordinates x.</param>
+        /// <param name="coordinatesY">The coordinates y.</param>
+        /// <param name="coordinatesZ">The coordinates z.</param>
+        public Query(int[] coordinatesX, int[] coordinatesY, int[] coordinatesZ)
         {
-            this.Xcoordinates = Xcoordinates;
-            this.Ycoordinates = Ycoordinates;
-            this.Zcoordinates = Zcoordinates;
+            this.CoordinatesX = coordinatesX;
+            this.CoordinatesY = coordinatesY;
+            this.CoordinatesZ = coordinatesZ;
         }
 
 

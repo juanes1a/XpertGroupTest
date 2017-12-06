@@ -1,0 +1,17 @@
+/XpertGroup.Test.Aplicacion.Operador/bin/*
+/XpertGroup.Test.Aplicacion.Operador/obj/*
+/XpertGroup.Test.Aplicacion.Validador/bin/*
+/XpertGroup.Test.Aplicacion.Validador/obj/*
+/XpertGroup.Test.Dominio.Entidades/bin/*
+/XpertGroup.Test.Dominio.Entidades/obj/*
+/XpertGroup.Test.Dominio.Entidades/obj/*
+/XpertGroup.Test.Dominio.Entidades/obj/*
+/XpertGroup.Test.Dominio.Interfaces/bin/*
+/XpertGroup.Test.Dominio.Interfaces/obj/*
+/XpertGroup.Test.Infraestructura.Data/bin/*
+/XpertGroup.Test.Infraestructura.Data/obj/*
+/XpertGroup.Test.Servicios.ResolucionDependencias/bin/*
+/XpertGroup.Test.Servicios.ResolucionDependencias/obj/*
+/XpertGroup.Test.Servicios.Orquestador/bin/*
+/XpertGroup.Test.Servicios.Orquestador/obj/*
+/.vs/XpertGroupTest/v15/.suo

@@ -1,25 +1,14 @@
-﻿using Castle.MicroKernel.Resolvers.SpecializedResolvers;
-using Castle.Windsor;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System;
 using System.Web;
-using System.Web.Optimization;
-using System.Web.Routing;
-using System.Web.Security;
-using System.Web.SessionState;
+using Castle.Windsor;
+using Castle.MicroKernel.Resolvers.SpecializedResolvers;
+using Castle.MicroKernel.Lifestyle;
+using Castle.MicroKernel.Registration;
 
-namespace XpertGroupTest
+namespace XpertGroupTest.App_Code
 {
-    public class Global : HttpApplication
+    public class Global : HttpApplication, IContainerAccessor
     {
-        void Application_Start(object sender, EventArgs e)
-        {
-            // Código que se ejecuta al iniciar la aplicación
-            InitializeIoC();
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
-        }
 
         private static IWindsorContainer container;
 
@@ -28,6 +17,11 @@ namespace XpertGroupTest
             //
             // TODO: Add constructor logic here
             //
+        }
+
+        IWindsorContainer IContainerAccessor.Container
+        {
+            get { return Container; }
         }
 
         public static IWindsorContainer Container
@@ -54,5 +48,12 @@ namespace XpertGroupTest
             Container = container;
 
         }
+
+        void Application_Start(object sender, EventArgs e)
+        {
+            InitializeIoC();
+            // Code that runs on application startup
+        }
+
     }
 }

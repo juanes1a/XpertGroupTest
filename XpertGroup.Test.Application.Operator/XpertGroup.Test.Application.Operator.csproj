@@ -40,7 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Operator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\XpertGroup.Test.Domain.Entities\XpertGroup.Test.Domain.Entities.csproj">
+      <Project>{98EF5D0D-3C34-4E50-B608-3FC451F699D7}</Project>
+      <Name>XpertGroup.Test.Domain.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XpertGroup.Test.Domain.Interfaces\XpertGroup.Test.Domain.Interfaces.csproj">
+      <Project>{597530c1-5b56-4ddb-82bc-5d4ccb0f2c8f}</Project>
+      <Name>XpertGroup.Test.Domain.Interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

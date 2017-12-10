@@ -23,7 +23,10 @@ namespace XpertGroup.Test.Application.Operator
         {
             try
             {
-                cube.Matrix[updateSentence.CoordinateX, updateSentence.CoordinateY, updateSentence.CoordinateZ] = updateSentence.Value;
+                cube.Matrix[updateSentence.CoordinateX - 1, updateSentence.CoordinateY - 1, updateSentence.CoordinateZ - 1] = updateSentence.Value;
+
+                cube.ExecutedOrders++;
+
                 return true;
             }
             catch (Exception e)
@@ -38,20 +41,27 @@ namespace XpertGroup.Test.Application.Operator
         /// <param name="cube">The cube.</param>
         /// <param name="querySentence">The query sentence.</param>
         /// <returns></returns>
-        public int ExecuteQuery(Cube cube, Query querySentence)
+        public long ExecuteQuery(Cube cube, Query querySentence)
         {
             try
             {
-                int firstValue = cube.Matrix[querySentence.Xcoordinates.FirstOrDefault(), querySentence.Ycoordinates.FirstOrDefault(), querySentence.Ycoordinates.FirstOrDefault()];
-                int secondValue = cube.Matrix[querySentence.Xcoordinates.LastOrDefault(), querySentence.Ycoordinates.LastOrDefault(), querySentence.Ycoordinates.LastOrDefault()];
+                long sum = 0;
+                for (int i = querySentence.CoordinatesX[0] - 1; i <= querySentence.CoordinatesX[1] - 1; i++)
+                {
+                    sum += cube.Matrix[i, i, i];
+                }
 
-                return firstValue + secondValue;
+                cube.ExecutedOrders++;
+
+                return sum;
             }
             catch (Exception e)
             {
                 return -1;
             }
         }
+
+
 
 
 

@@ -10,9 +10,9 @@ using XpertGroup.Test.Domain.Interfaces;
 
 namespace XpertGroup.Test.Services.DependencyResolution.Operator
 {
-    public class Installer : IWindsorInstaller
+    public class OperatorInstaller : IWindsorInstaller
     {
-        public Installer()
+        public OperatorInstaller()
         {
         }
 

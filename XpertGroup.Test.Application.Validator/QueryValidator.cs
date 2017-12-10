@@ -15,9 +15,9 @@ namespace XpertGroup.Test.Application.Validator
             this.CascadeMode = CascadeMode.StopOnFirstFailure;
             RuleSet("General", () =>
             {
-                this.RuleForEach(query => query.CoordinatesX).GreaterThanOrEqualTo(1).LessThanOrEqualTo(matrixDimension).NotEmpty().WithMessage("Las coordenadas X deben ser mayores o iguales a 1 y menores o iguales a " + MatrixDimension);
-                this.RuleForEach(query => query.CoordinatesY).GreaterThanOrEqualTo(1).LessThanOrEqualTo(matrixDimension).NotEmpty().WithMessage("Las coordenadas Y deben ser mayores o iguales a 1 y menores o iguales a " + MatrixDimension);
-                this.RuleForEach(query => query.CoordinatesZ).GreaterThanOrEqualTo(1).LessThanOrEqualTo(matrixDimension).NotEmpty().WithMessage("Las coordenadas Z deben ser mayores o iguales a 1 y menores o iguales a " + MatrixDimension);
+                this.RuleForEach(query => query.CoordinatesX).GreaterThanOrEqualTo(1).LessThanOrEqualTo(matrixDimension).NotEmpty().WithMessage("Las coordenadas X deben ser mayores o iguales a 1 y menores o iguales a " + matrixDimension);
+                this.RuleForEach(query => query.CoordinatesY).GreaterThanOrEqualTo(1).LessThanOrEqualTo(matrixDimension).NotEmpty().WithMessage("Las coordenadas Y deben ser mayores o iguales a 1 y menores o iguales a " + matrixDimension);
+                this.RuleForEach(query => query.CoordinatesZ).GreaterThanOrEqualTo(1).LessThanOrEqualTo(matrixDimension).NotEmpty().WithMessage("Las coordenadas Z deben ser mayores o iguales a 1 y menores o iguales a " + matrixDimension);
             });
         }
     }

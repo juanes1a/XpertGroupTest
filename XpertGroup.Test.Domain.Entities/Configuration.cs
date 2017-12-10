@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace XpertGroup.Test.Domain.Entities
 {
+    [Serializable]
     public class Configuration
     {
         /// <summary>
@@ -41,5 +42,10 @@ namespace XpertGroup.Test.Domain.Entities
             this.MatrixDimension = matrizDimension;
             this.NumberOperations = NumberOperations;
         }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Configuration"/> class.
+        /// </summary>
+        public Configuration() { }
     }
 }

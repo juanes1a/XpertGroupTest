@@ -10,7 +10,7 @@ namespace XpertGroup.Test.Domain.Interfaces
         /// <param name="cube">The cube.</param>
         /// <param name="querySentence">The query sentence.</param>
         /// <returns></returns>
-        int ExecuteQuery(Cube cube, Query querySentence);
+        long ExecuteQuery(Cube cube, Query querySentence);
 
         /// <summary>
         /// Executes the update.

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace XpertGroup.Test.Domain.Entities
 {
+    [Serializable]
     public class Cube
     {
         /// <summary>
@@ -22,7 +23,7 @@ namespace XpertGroup.Test.Domain.Entities
         /// <value>
         /// The matrix.
         /// </value>
-        public int[,,] Matrix { get; set; }
+        public long[,,] Matrix { get; set; }
 
         /// <summary>
         /// Gets or sets the executed orders.
@@ -39,7 +40,7 @@ namespace XpertGroup.Test.Domain.Entities
         public Cube(Configuration configuration)
         {
             this.Configuration = configuration;
-            this.Matrix = new int[this.Configuration.MatrixDimension, this.Configuration.MatrixDimension, this.Configuration.MatrixDimension];
+            this.Matrix = new long[this.Configuration.MatrixDimension, this.Configuration.MatrixDimension, this.Configuration.MatrixDimension];
             this.ExecutedOrders = 0;
         }
     }

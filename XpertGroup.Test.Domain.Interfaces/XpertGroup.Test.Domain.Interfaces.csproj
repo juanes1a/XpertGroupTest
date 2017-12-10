@@ -40,13 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Orchestrator\IOrchestrator.cs" />
+    <Compile Include="Operator\IOperator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
-    <Folder Include="Operador\" />
-    <Folder Include="Orquestador\" />
-    <Folder Include="Validador\" />
+    <Folder Include="Validator\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\XpertGroup.Test.Domain.Entities\XpertGroup.Test.Domain.Entities.csproj">
+      <Project>{98ef5d0d-3c34-4e50-b608-3fc451f699d7}</Project>
+      <Name>XpertGroup.Test.Domain.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

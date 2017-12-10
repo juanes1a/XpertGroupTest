@@ -30,7 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FluentValidation, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.7.3.0-beta3\lib\net45\FluentValidation.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,7 +44,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Orchestrator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\XpertGroup.Test.Application.Operator\XpertGroup.Test.Application.Operator.csproj">
+      <Project>{53FEE699-FC7E-486B-82CF-AF5E7B27CCCA}</Project>
+      <Name>XpertGroup.Test.Application.Operator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XpertGroup.Test.Application.Validator\XpertGroup.Test.Application.Validator.csproj">
+      <Project>{78FD8185-DA1D-4374-8638-84CB4052AD21}</Project>
+      <Name>XpertGroup.Test.Application.Validator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XpertGroup.Test.Domain.Entities\XpertGroup.Test.Domain.Entities.csproj">
+      <Project>{98EF5D0D-3C34-4E50-B608-3FC451F699D7}</Project>
+      <Name>XpertGroup.Test.Domain.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XpertGroup.Test.Domain.Interfaces\XpertGroup.Test.Domain.Interfaces.csproj">
+      <Project>{597530C1-5B56-4DDB-82BC-5D4CCB0F2C8F}</Project>
+      <Name>XpertGroup.Test.Domain.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1B2A4E56-02F5-4D94-B1E2-36DCD70CF896}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XpertGroup.CubeSummation.Services.Orchestrator</RootNamespace>
+    <AssemblyName>XpertGroup.CubeSummation.Services.Orchestrator</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentValidation, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.7.3.0-beta3\lib\net45\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Orchestrator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\XpertGroup.CubeSummation.Application.Operator\XpertGroup.CubeSummation.Application.Operator.csproj">
+      <Project>{53FEE699-FC7E-486B-82CF-AF5E7B27CCCA}</Project>
+      <Name>XpertGroup.CubeSummation.Application.Operator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XpertGroup.CubeSummation.Application.Validator\XpertGroup.CubeSummation.Application.Validator.csproj">
+      <Project>{78FD8185-DA1D-4374-8638-84CB4052AD21}</Project>
+      <Name>XpertGroup.CubeSummation.Application.Validator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XpertGroup.CubeSummation.Domain.Entities\XpertGroup.CubeSummation.Domain.Entities.csproj">
+      <Project>{98EF5D0D-3C34-4E50-B608-3FC451F699D7}</Project>
+      <Name>XpertGroup.CubeSummation.Domain.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XpertGroup.CubeSummation.Domain.Interfaces\XpertGroup.CubeSummation.Domain.Interfaces.csproj">
+      <Project>{597530C1-5B56-4DDB-82BC-5D4CCB0F2C8F}</Project>
+      <Name>XpertGroup.CubeSummation.Domain.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

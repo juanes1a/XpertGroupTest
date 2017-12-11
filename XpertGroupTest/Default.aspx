@@ -18,7 +18,7 @@
     </div>
 
     <div class="jumbotron">
-        <h4>Salida del Aplicativo</h4>
+        <h4>Salida del aplicativo para la entrada: <asp:Label ID="lblCurrentInput" runat="server"></asp:Label></h4>
         <asp:TextBox ID="txtOutputCode" runat="server" TextMode="MultiLine" ReadOnly="true"></asp:TextBox>
     </div>
 

@@ -10,11 +10,68 @@ namespace XpertGroup.CubeSummation.Services.Orchestrator
     public class Orchestrator : IOrchestrator
     {
 
+        /// <summary>
+        /// Gets or sets the operator.
+        /// </summary>
+        /// <value>
+        /// The operator.
+        /// </value>
         public IOperator Operator { get; set; }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Orchestrator"/> class.
+        /// </summary>
+        /// <param name="Operator">The operator.</param>
         public Orchestrator(IOperator Operator)
         {
             this.Operator = Operator;
+        }
+
+        /// <summary>
+        /// Executes the process.
+        /// </summary>
+        /// <param name="cube">The cube.</param>
+        /// <param name="configuration">The configuration.</param>
+        /// <param name="input">The input.</param>
+        /// <returns></returns>
+        public ValidationResult ExecuteProcess(Cube cube, Configuration configuration, string input)
+        {
+            string operation = input.Split(' ')[0].ToUpper();
+            ValidationResult response;
+            ValidationResult successVlaidationResult;
+
+            switch (operation)
+            {
+                case "UPDATE":
+                    Update update = this.GetUpdateOperationInstance(input.ToUpper());
+                    response = this.ValidateUpdateSentence(update, configuration);
+                    if (response.IsValid)
+                    {
+                        if (this.ExecuteUpdateSentence(cube, update))
+                        {
+                            successVlaidationResult = new ValidationResult() { IsValid = true, OutPut = "N/A" };
+                            return successVlaidationResult;
+                        }
+                    }
+                    return response;
+                case "QUERY":
+                    Query query = this.GetQueryOperationInstance(input.ToUpper());
+                    response = this.ValidateQuerySentence(query, configuration);
+                    if (response.IsValid)
+                    {
+
+                        long queryResult = this.ExecuteQuerySentence(cube, query);
+                        successVlaidationResult = new ValidationResult() { IsValid = true, OutPut = queryResult.ToString() };
+                        return successVlaidationResult;
+
+                    }
+                    return response;
+                default:
+                    successVlaidationResult = new ValidationResult() { IsValid = false, OutPut = "N/A" };
+                    successVlaidationResult.Errors.Add("La sentencia ingresada no corresponde a ninguna permitida, utilice UPDATE o QUERY");
+                    return successVlaidationResult;
+            }
+
         }
 
         /// <summary>
@@ -23,7 +80,7 @@ namespace XpertGroup.CubeSummation.Services.Orchestrator
         /// <param name="updateEntrance">The update entrance.</param>
         /// <returns></returns>
         /// <exception cref="ApplicationException">La sentencia UPDATE no tiene los parametros indicados, deben ser 5 parametros separados por espacio. Ejemplo UPDATE x y z W</exception>
-        public Update GetUpdateOperationInstance(string updateEntrance)
+        private Update GetUpdateOperationInstance(string updateEntrance)
         {
             string[] updateSentence = updateEntrance.Split(' ');
             if (updateSentence.Length == 5)
@@ -47,7 +104,7 @@ namespace XpertGroup.CubeSummation.Services.Orchestrator
         /// <param name="queryEntrance">The query entrance.</param>
         /// <returns></returns>
         /// <exception cref="ApplicationException">La sentencia QUERY no tiene los parametros indicados, deben ser 7 parametros separados por espacio. Ejemplo QUERY x1 x2 y1 y2 z1 z2</exception>
-        public Query GetQueryOperationInstance(string queryEntrance)
+        private Query GetQueryOperationInstance(string queryEntrance)
         {
             string[] updateSentence = queryEntrance.Split(' ');
             if (updateSentence.Length == 7)
@@ -81,7 +138,7 @@ namespace XpertGroup.CubeSummation.Services.Orchestrator
         /// <param name="sentence">The sentence.</param>
         /// <param name="configuration">The configuration.</param>
         /// <returns></returns>
-        public Domain.Entities.ValidationResult ValidateUpdateSentence(Update sentence, Configuration configuration)
+        private Domain.Entities.ValidationResult ValidateUpdateSentence(Update sentence, Configuration configuration)
         {
             UpdateValidator validator = new UpdateValidator(configuration.MatrixDimension);
             FluentValidation.Results.ValidationResult results = validator.Validate(sentence);
@@ -94,7 +151,7 @@ namespace XpertGroup.CubeSummation.Services.Orchestrator
         /// <param name="sentence">The sentence.</param>
         /// <param name="configuration">The configuration.</param>
         /// <returns></returns>
-        public Domain.Entities.ValidationResult ValidateQuerySentence(Query sentence, Configuration configuration)
+        private Domain.Entities.ValidationResult ValidateQuerySentence(Query sentence, Configuration configuration)
         {
             QueryValidator validator = new QueryValidator(configuration.MatrixDimension);
             FluentValidation.Results.ValidationResult results = validator.Validate(sentence);
@@ -107,7 +164,7 @@ namespace XpertGroup.CubeSummation.Services.Orchestrator
         /// <param name="cube">The cube.</param>
         /// <param name="updateSentence">The update sentence.</param>
         /// <returns></returns>
-        public bool ExecuteUpdateSentence(Cube cube, Update updateSentence)
+        private bool ExecuteUpdateSentence(Cube cube, Update updateSentence)
         {
             return Operator.ExecuteUpdate(cube, updateSentence);
         }
@@ -118,7 +175,7 @@ namespace XpertGroup.CubeSummation.Services.Orchestrator
         /// <param name="cube">The cube.</param>
         /// <param name="querySentence">The query sentence.</param>
         /// <returns></returns>
-        public long ExecuteQuerySentence(Cube cube, Query querySentence)
+        private long ExecuteQuerySentence(Cube cube, Query querySentence)
         {
             return Operator.ExecuteQuery(cube, querySentence);
         }

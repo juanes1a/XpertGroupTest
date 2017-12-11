@@ -51,6 +51,8 @@ namespace XpertGroup.CubeSummation.WebSite
         {
             try
             {
+                CleanTextBoxes();
+
                 Configuration configuration = Configuration;
 
                 if (configuration.TestCases == 0)
@@ -62,20 +64,8 @@ namespace XpertGroup.CubeSummation.WebSite
 
                 if (configuration.MatrixDimension == 0 && configuration.NumberOperations == 0)
                 {
-                    configuration.MatrixDimension = int.Parse(txtInputCode.Text.Split(' ')[0]);
-                    configuration.NumberOperations = int.Parse(txtInputCode.Text.Split(' ')[1]);
 
-                    ValidationResult response = Orchestrator.ValidateConfiguration(configuration);
-                    if (!response.IsValid)
-                    {
-                        WriteErrors(response);
-                    }
-
-                    lblTestCases.Text = "Casos de prueba restantes: " + configuration.TestCases.ToString();
-                    lblNumberOperations.Text = "Numero de operaciones para este caso de prueba: " + configuration.NumberOperations.ToString();
-                    lblNumberOperationsExecuted.Text = "Numero de operaciones  ejecutadas para este caso de prueba: " + Cube.ExecutedOrders.ToString();
-
-                    this.Configuration = configuration;
+                    SetConfiguration();
                     return;
                 }
 
@@ -91,69 +81,52 @@ namespace XpertGroup.CubeSummation.WebSite
         private void ExecuteSentences()
         {
             Cube cube = Cube;
+            Configuration configuration = Configuration;
+
             if (cube.ExecutedOrders < Configuration.NumberOperations && Configuration.TestCases > 0)
             {
-                string operation = txtInputCode.Text.Split(' ')[0].ToUpper();
-                ValidationResult response;
-
-                switch (operation)
+                string operation = txtInputCode.Text.ToUpper();
+                ValidationResult response = Orchestrator.ExecuteProcess(cube, configuration, operation);
+                if (response.IsValid)
                 {
-                    case "UPDATE":
-                        Update update = Orchestrator.GetUpdateOperationInstance(txtInputCode.Text.ToUpper());
-                        response = Orchestrator.ValidateUpdateSentence(update, Configuration);
-                        if (response.IsValid)
-                        {
-                            if (Orchestrator.ExecuteUpdateSentence(cube, update))
-                            {
-                                lblNumberOperationsExecuted.Text = "Numero de operaciones  ejecutadas para este caso de prueba: " + cube.ExecutedOrders.ToString();
-                                Cube = cube;
-                            }
-                        }
-                        else
-                        {
-                            WriteErrors(response);
-                        }
-                        break;
-
-                    case "QUERY":
-                        Query query = Orchestrator.GetQueryOperationInstance(txtInputCode.Text.ToUpper());
-                        response = Orchestrator.ValidateQuerySentence(query, Configuration);
-                        if (response.IsValid)
-                        {
-                            txtOutputCode.Text = Orchestrator.ExecuteQuerySentence(cube, query) + "\n";
-                            lblNumberOperationsExecuted.Text = "Numero de operaciones  ejecutadas para este caso de prueba: " + cube.ExecutedOrders.ToString();
-                            Cube = cube;
-                        }
-                        else
-                        {
-                            WriteErrors(response);
-                        }
-                        break;
-                    default:
-                        btnSendCode.Enabled = false;
-                        txtValidationErrors.Text += "La sentencia ingresada no corresponde a ninguna permitida, utilice UPDATE o QUERY" + "\n";
-                        break;
+                    txtOutputCode.Text = response.OutPut.Equals("N/A") ? "" : response.OutPut;
                 }
+                else
+                {
+                    WriteErrors(response);
+                }
+
+                lblNumberOperationsExecuted.Text = "Numero de operaciones  ejecutadas para este caso de prueba: " + cube.ExecutedOrders.ToString();
+                Cube = cube;
             }
             else
             {
                 Cube = null;
-                Configuration configuration = Configuration;
-                configuration.MatrixDimension = int.Parse(txtInputCode.Text.Split(' ')[0]);
-                configuration.NumberOperations = int.Parse(txtInputCode.Text.Split(' ')[1]);
-
-                lblTestCases.Text = "Casos de prueba restantes: " + (configuration.TestCases - 1).ToString();
-                lblNumberOperations.Text = "Numero de operaciones para este caso de prueba: " + configuration.NumberOperations.ToString();
-                lblNumberOperationsExecuted.Text = "Numero de operaciones  ejecutadas para este caso de prueba: " + Cube.ExecutedOrders.ToString();
+                SetConfiguration();
             }
-
-
         }
 
 
+        /// <summary>
+        /// Sets the configuration.
+        /// </summary>
         private void SetConfiguration()
         {
+            Configuration configuration = Configuration;
+            configuration.MatrixDimension = int.Parse(txtInputCode.Text.Split(' ')[0]);
+            configuration.NumberOperations = int.Parse(txtInputCode.Text.Split(' ')[1]);
 
+            ValidationResult response = Orchestrator.ValidateConfiguration(configuration);
+            if (!response.IsValid)
+            {
+                WriteErrors(response);
+            }
+
+            lblTestCases.Text = "Casos de prueba restantes: " + configuration.TestCases.ToString();
+            lblNumberOperations.Text = "Numero de operaciones para este caso de prueba: " + configuration.NumberOperations.ToString();
+            lblNumberOperationsExecuted.Text = "Numero de operaciones  ejecutadas para este caso de prueba: " + Cube.ExecutedOrders.ToString();
+
+            Configuration = configuration;
         }
 
         /// <summary>
@@ -167,6 +140,13 @@ namespace XpertGroup.CubeSummation.WebSite
             {
                 txtValidationErrors.Text = txtValidationErrors.Text + "\n" + error;
             }
+        }
+
+        private void CleanTextBoxes()
+        {
+            txtOutputCode.Text = string.Empty;
+            txtValidationErrors.Text = string.Empty;
+            lblCurrentInput.Text = txtInputCode.Text;
         }
     }
 }

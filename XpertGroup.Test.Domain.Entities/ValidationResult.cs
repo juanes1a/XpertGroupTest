@@ -25,6 +25,14 @@ namespace XpertGroup.CubeSummation.Domain.Entities
         public List<string> Errors { get; set; }
 
         /// <summary>
+        /// Gets or sets the out put.
+        /// </summary>
+        /// <value>
+        /// The out put.
+        /// </value>
+        public string OutPut { get; set; }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ValidationResult"/> class.
         /// </summary>
         public ValidationResult()

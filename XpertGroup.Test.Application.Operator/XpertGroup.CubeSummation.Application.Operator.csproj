@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{597530C1-5B56-4DDB-82BC-5D4CCB0F2C8F}</ProjectGuid>
+    <ProjectGuid>{53FEE699-FC7E-486B-82CF-AF5E7B27CCCA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>XpertGroup.Test.Domain.Interfaces</RootNamespace>
-    <AssemblyName>XpertGroup.Test.Domain.Interfaces</AssemblyName>
+    <RootNamespace>XpertGroup.Test.Application.Operator</RootNamespace>
+    <AssemblyName>XpertGroup.Test.Application.Operator</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,18 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Orchestrator\IOrchestrator.cs" />
-    <Compile Include="Operator\IOperator.cs" />
+    <Compile Include="Operator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\" />
-    <Folder Include="Validator\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\XpertGroup.Test.Domain.Entities\XpertGroup.Test.Domain.Entities.csproj">
-      <Project>{98ef5d0d-3c34-4e50-b608-3fc451f699d7}</Project>
-      <Name>XpertGroup.Test.Domain.Entities</Name>
+    <ProjectReference Include="..\XpertGroup.Test.Domain.Entities\XpertGroup.CubeSummation.Domain.Entities.csproj">
+      <Project>{98EF5D0D-3C34-4E50-B608-3FC451F699D7}</Project>
+      <Name>XpertGroup.CubeSummation.Domain.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XpertGroup.Test.Domain.Interfaces\XpertGroup.CubeSummation.Domain.Interfaces.csproj">
+      <Project>{597530c1-5b56-4ddb-82bc-5d4ccb0f2c8f}</Project>
+      <Name>XpertGroup.CubeSummation.Domain.Interfaces</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="XpertGroupTest.Global" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="XpertGroup.CubeSummation.WebSite.Global" Language="C#" %>

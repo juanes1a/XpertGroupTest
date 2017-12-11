@@ -53,9 +53,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\XpertGroup.Test.Domain.Entities\XpertGroup.Test.Domain.Entities.csproj">
+    <ProjectReference Include="..\XpertGroup.Test.Domain.Entities\XpertGroup.CubeSummation.Domain.Entities.csproj">
       <Project>{98EF5D0D-3C34-4E50-B608-3FC451F699D7}</Project>
-      <Name>XpertGroup.Test.Domain.Entities</Name>
+      <Name>XpertGroup.CubeSummation.Domain.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

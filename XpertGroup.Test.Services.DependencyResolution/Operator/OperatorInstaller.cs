@@ -6,9 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using XpertGroup.Test.Domain.Interfaces;
+using XpertGroup.CubeSummation.Domain.Interfaces;
 
-namespace XpertGroup.Test.Services.DependencyResolution.Operator
+namespace XpertGroup.CubeSummation.Services.DependencyResolution.Operator
 {
     public class OperatorInstaller : IWindsorInstaller
     {

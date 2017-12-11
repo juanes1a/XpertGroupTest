@@ -61,21 +61,21 @@
     <Folder Include="Validator\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\XpertGroup.Test.Application.Operator\XpertGroup.Test.Application.Operator.csproj">
+    <ProjectReference Include="..\XpertGroup.Test.Application.Operator\XpertGroup.CubeSummation.Application.Operator.csproj">
       <Project>{53fee699-fc7e-486b-82cf-af5e7b27ccca}</Project>
-      <Name>XpertGroup.Test.Application.Operator</Name>
+      <Name>XpertGroup.CubeSummation.Application.Operator</Name>
     </ProjectReference>
-    <ProjectReference Include="..\XpertGroup.Test.Application.Validator\XpertGroup.Test.Application.Validator.csproj">
+    <ProjectReference Include="..\XpertGroup.Test.Application.Validator\XpertGroup.CubeSummation.Application.Validator.csproj">
       <Project>{78fd8185-da1d-4374-8638-84cb4052ad21}</Project>
-      <Name>XpertGroup.Test.Application.Validator</Name>
+      <Name>XpertGroup.CubeSummation.Application.Validator</Name>
     </ProjectReference>
-    <ProjectReference Include="..\XpertGroup.Test.Domain.Interfaces\XpertGroup.Test.Domain.Interfaces.csproj">
+    <ProjectReference Include="..\XpertGroup.Test.Domain.Interfaces\XpertGroup.CubeSummation.Domain.Interfaces.csproj">
       <Project>{597530C1-5B56-4DDB-82BC-5D4CCB0F2C8F}</Project>
-      <Name>XpertGroup.Test.Domain.Interfaces</Name>
+      <Name>XpertGroup.CubeSummation.Domain.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\XpertGroup.Test.Services.Orchestrator\XpertGroup.Test.Services.Orchestrator.csproj">
+    <ProjectReference Include="..\XpertGroup.Test.Services.Orchestrator\XpertGroup.CubeSummation.Services.Orchestrator.csproj">
       <Project>{1b2a4e56-02f5-4d94-b1e2-36dcd70cf896}</Project>
-      <Name>XpertGroup.Test.Services.Orchestrator</Name>
+      <Name>XpertGroup.CubeSummation.Services.Orchestrator</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Web;
 using System.Web.UI;
 
-namespace XpertGroupTest.App_Code.Windsor
+namespace XpertGroup.CubeSummation.WebSite.App_Code.Windsor
 {
     public class WindsorHttpModule : IHttpModule
     {

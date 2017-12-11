@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace XpertGroupTest {
+namespace XpertGroup.CubeSummation.WebSite {
     
     
     public partial class _Default {

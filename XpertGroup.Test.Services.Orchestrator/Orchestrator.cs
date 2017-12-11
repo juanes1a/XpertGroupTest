@@ -1,11 +1,11 @@
 ﻿using System;
-using XpertGroup.Test.Application.Operator;
-using XpertGroup.Test.Application.Validator;
-using XpertGroup.Test.Domain.Entities;
-using XpertGroup.Test.Domain.Interfaces;
-using XpertGroup.Test.Domain.Interfaces.Orchestrator;
+using XpertGroup.CubeSummation.Application.Operator;
+using XpertGroup.CubeSummation.Application.Validator;
+using XpertGroup.CubeSummation.Domain.Entities;
+using XpertGroup.CubeSummation.Domain.Interfaces;
+using XpertGroup.CubeSummation.Domain.Interfaces.Orchestrator;
 
-namespace XpertGroup.Test.Services.Orchestrator
+namespace XpertGroup.CubeSummation.Services.Orchestrator
 {
     public class Orchestrator : IOrchestrator
     {

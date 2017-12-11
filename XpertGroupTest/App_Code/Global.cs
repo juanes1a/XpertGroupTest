@@ -5,7 +5,7 @@ using Castle.MicroKernel.Resolvers.SpecializedResolvers;
 using Castle.MicroKernel.Lifestyle;
 using Castle.MicroKernel.Registration;
 
-namespace XpertGroupTest.App_Code
+namespace XpertGroup.CubeSummation.WebSite.App_Code
 {
     public class Global : HttpApplication, IContainerAccessor
     {
@@ -42,8 +42,8 @@ namespace XpertGroupTest.App_Code
             var ioc = Ragolo.Core.IoC.IocHelper.Instance;
             var container = ioc.GetContainer();
 
-            ioc.Install(new XpertGroup.Test.Services.DependencyResolution.Operator.OperatorInstaller());
-            ioc.Install(new XpertGroup.Test.Services.DependencyResolution.Orchestrator.OrchestratorInstaller());
+            ioc.Install(new XpertGroup.CubeSummation.Services.DependencyResolution.Operator.OperatorInstaller());
+            ioc.Install(new XpertGroup.CubeSummation.Services.DependencyResolution.Orchestrator.OrchestratorInstaller());
             container.Kernel.Resolver.AddSubResolver(new CollectionResolver(container.Kernel));
             Container = container;
 

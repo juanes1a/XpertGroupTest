@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("XpertGroup.Test.Infraestructura.Data")]
+[assembly: AssemblyTitle("XpertGroup.CubeSummation.Infraestructura.Data")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("XpertGroup.Test.Infraestructura.Data")]
+[assembly: AssemblyProduct("XpertGroup.CubeSummation.Infraestructura.Data")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

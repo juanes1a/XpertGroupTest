@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XpertGroupTest", "XpertGroupTest\XpertGroupTest.csproj", "{3A3E2502-3CC9-41A9-B02C-975F95C178E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XpertGroup.CubeSummation.WebSite", "XpertGroupTest\XpertGroup.CubeSummation.WebSite.csproj", "{3A3E2502-3CC9-41A9-B02C-975F95C178E9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0.Domain", "0.Domain", "{65E7DDB9-9D17-44D2-B372-4A4F151D42B1}"
 EndProject
@@ -15,19 +15,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Application", "3.Applicat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.Infrastructure", "4.Infrastructure", "{EB2302C5-335B-4855-A300-768F01060B8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XpertGroup.Test.Domain.Interfaces", "XpertGroup.Test.Domain.Interfaces\XpertGroup.Test.Domain.Interfaces.csproj", "{597530C1-5B56-4DDB-82BC-5D4CCB0F2C8F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XpertGroup.CubeSummation.Domain.Interfaces", "XpertGroup.Test.Domain.Interfaces\XpertGroup.CubeSummation.Domain.Interfaces.csproj", "{597530C1-5B56-4DDB-82BC-5D4CCB0F2C8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XpertGroup.Test.Domain.Entities", "XpertGroup.Test.Domain.Entities\XpertGroup.Test.Domain.Entities.csproj", "{98EF5D0D-3C34-4E50-B608-3FC451F699D7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XpertGroup.CubeSummation.Domain.Entities", "XpertGroup.Test.Domain.Entities\XpertGroup.CubeSummation.Domain.Entities.csproj", "{98EF5D0D-3C34-4E50-B608-3FC451F699D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XpertGroup.Test.Infrastructure.Data", "XpertGroup.Test.Infrastructure.Data\XpertGroup.Test.Infrastructure.Data.csproj", "{51302828-236F-4CC6-844F-E1B606BCF543}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XpertGroup.CubeSummation.Infrastructure.Data", "XpertGroup.Test.Infrastructure.Data\XpertGroup.CubeSummation.Infrastructure.Data.csproj", "{51302828-236F-4CC6-844F-E1B606BCF543}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XpertGroup.Test.Application.Operator", "XpertGroup.Test.Application.Operator\XpertGroup.Test.Application.Operator.csproj", "{53FEE699-FC7E-486B-82CF-AF5E7B27CCCA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XpertGroup.CubeSummation.Application.Operator", "XpertGroup.Test.Application.Operator\XpertGroup.CubeSummation.Application.Operator.csproj", "{53FEE699-FC7E-486B-82CF-AF5E7B27CCCA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XpertGroup.Test.Application.Validator", "XpertGroup.Test.Application.Validator\XpertGroup.Test.Application.Validator.csproj", "{78FD8185-DA1D-4374-8638-84CB4052AD21}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XpertGroup.CubeSummation.Application.Validator", "XpertGroup.Test.Application.Validator\XpertGroup.CubeSummation.Application.Validator.csproj", "{78FD8185-DA1D-4374-8638-84CB4052AD21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XpertGroup.Test.Services.DependencyResolution", "XpertGroup.Test.Services.DependencyResolution\XpertGroup.Test.Services.DependencyResolution.csproj", "{B8BC06E7-D7CE-42F4-8280-FA6649E1EA6E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XpertGroup.CubeSummation.Services.DependencyResolution", "XpertGroup.Test.Services.DependencyResolution\XpertGroup.CubeSummation.Services.DependencyResolution.csproj", "{B8BC06E7-D7CE-42F4-8280-FA6649E1EA6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XpertGroup.Test.Services.Orchestrator", "XpertGroup.Test.Services.Orchestrator\XpertGroup.Test.Services.Orchestrator.csproj", "{1B2A4E56-02F5-4D94-B1E2-36DCD70CF896}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XpertGroup.CubeSummation.Services.Orchestrator", "XpertGroup.Test.Services.Orchestrator\XpertGroup.CubeSummation.Services.Orchestrator.csproj", "{1B2A4E56-02F5-4D94-B1E2-36DCD70CF896}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

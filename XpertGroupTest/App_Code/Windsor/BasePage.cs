@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using Unity;
 
-namespace XpertGroupTest.App_Code.Windsor
+namespace XpertGroup.CubeSummation.WebSite.App_Code.Windsor
 {
     /// <summary>
     /// Summary description for BasePage

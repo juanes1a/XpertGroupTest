@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace XpertGroup.Test.Domain.Entities
+namespace XpertGroup.CubeSummation.Domain.Entities
 {
     public class Update
     {

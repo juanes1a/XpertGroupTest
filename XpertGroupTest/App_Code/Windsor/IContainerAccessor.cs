@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace XpertGroupTest.App_Code.Windsor
+namespace XpertGroup.CubeSummation.WebSite.App_Code.Windsor
 {
     public interface IContainerAccessor
     {

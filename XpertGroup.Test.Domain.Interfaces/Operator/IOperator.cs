@@ -1,6 +1,6 @@
-﻿using XpertGroup.Test.Domain.Entities;
+﻿using XpertGroup.CubeSummation.Domain.Entities;
 
-namespace XpertGroup.Test.Domain.Interfaces
+namespace XpertGroup.CubeSummation.Domain.Interfaces
 {
     public interface IOperator
     {

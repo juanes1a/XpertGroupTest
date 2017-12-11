@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace XpertGroupTest
+namespace XpertGroup.CubeSummation.WebSite
 {
     public partial class SiteMaster : MasterPage
     {

@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="XpertGroupTest.SiteMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="XpertGroup.CubeSummation.WebSite.SiteMaster" %>
 
 <!DOCTYPE html>
 

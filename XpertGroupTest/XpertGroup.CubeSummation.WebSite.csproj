@@ -264,21 +264,21 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\XpertGroup.Test.Domain.Entities\XpertGroup.Test.Domain.Entities.csproj">
+    <ProjectReference Include="..\XpertGroup.Test.Domain.Entities\XpertGroup.CubeSummation.Domain.Entities.csproj">
       <Project>{98EF5D0D-3C34-4E50-B608-3FC451F699D7}</Project>
-      <Name>XpertGroup.Test.Domain.Entities</Name>
+      <Name>XpertGroup.CubeSummation.Domain.Entities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\XpertGroup.Test.Domain.Interfaces\XpertGroup.Test.Domain.Interfaces.csproj">
+    <ProjectReference Include="..\XpertGroup.Test.Domain.Interfaces\XpertGroup.CubeSummation.Domain.Interfaces.csproj">
       <Project>{597530C1-5B56-4DDB-82BC-5D4CCB0F2C8F}</Project>
-      <Name>XpertGroup.Test.Domain.Interfaces</Name>
+      <Name>XpertGroup.CubeSummation.Domain.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\XpertGroup.Test.Services.DependencyResolution\XpertGroup.Test.Services.DependencyResolution.csproj">
+    <ProjectReference Include="..\XpertGroup.Test.Services.DependencyResolution\XpertGroup.CubeSummation.Services.DependencyResolution.csproj">
       <Project>{b8bc06e7-d7ce-42f4-8280-fa6649e1ea6e}</Project>
-      <Name>XpertGroup.Test.Services.DependencyResolution</Name>
+      <Name>XpertGroup.CubeSummation.Services.DependencyResolution</Name>
     </ProjectReference>
-    <ProjectReference Include="..\XpertGroup.Test.Services.Orchestrator\XpertGroup.Test.Services.Orchestrator.csproj">
+    <ProjectReference Include="..\XpertGroup.Test.Services.Orchestrator\XpertGroup.CubeSummation.Services.Orchestrator.csproj">
       <Project>{1b2a4e56-02f5-4d94-b1e2-36dcd70cf896}</Project>
-      <Name>XpertGroup.Test.Services.Orchestrator</Name>
+      <Name>XpertGroup.CubeSummation.Services.Orchestrator</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

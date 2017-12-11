@@ -4,10 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using XpertGroup.Test.Domain.Entities;
-using XpertGroup.Test.Domain.Interfaces.Orchestrator;
+using XpertGroup.CubeSummation.Domain.Entities;
+using XpertGroup.CubeSummation.Domain.Interfaces.Orchestrator;
 
-namespace XpertGroupTest
+namespace XpertGroup.CubeSummation.WebSite
 {
     public partial class _Default : Page
     {
@@ -147,6 +147,12 @@ namespace XpertGroupTest
                 lblNumberOperationsExecuted.Text = "Numero de operaciones  ejecutadas para este caso de prueba: " + Cube.ExecutedOrders.ToString();
             }
 
+
+        }
+
+
+        private void SetConfiguration()
+        {
 
         }
 

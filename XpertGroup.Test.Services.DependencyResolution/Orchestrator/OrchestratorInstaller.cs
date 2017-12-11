@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
-using XpertGroup.Test.Domain.Interfaces.Orchestrator;
+using XpertGroup.CubeSummation.Domain.Interfaces.Orchestrator;
 
-namespace XpertGroup.Test.Services.DependencyResolution.Orchestrator
+namespace XpertGroup.CubeSummation.Services.DependencyResolution.Orchestrator
 {
     public class OrchestratorInstaller : IWindsorInstaller
     {

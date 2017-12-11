@@ -1,6 +1,6 @@
-﻿using XpertGroup.Test.Domain.Entities;
+﻿using XpertGroup.CubeSummation.Domain.Entities;
 
-namespace XpertGroup.Test.Domain.Interfaces.Orchestrator
+namespace XpertGroup.CubeSummation.Domain.Interfaces.Orchestrator
 {
     public interface IOrchestrator
     {

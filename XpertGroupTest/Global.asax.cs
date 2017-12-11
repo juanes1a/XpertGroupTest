@@ -9,7 +9,7 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 
-namespace XpertGroupTest
+namespace XpertGroup.CubeSummation.WebSite
 {
     public class Global : HttpApplication
     {
@@ -48,8 +48,8 @@ namespace XpertGroupTest
             var ioc = Ragolo.Core.IoC.IocHelper.Instance;
             var container = ioc.GetContainer();
 
-            ioc.Install(new XpertGroup.Test.Services.DependencyResolution.Operator.OperatorInstaller());
-            ioc.Install(new XpertGroup.Test.Services.DependencyResolution.Orchestrator.OrchestratorInstaller());
+            ioc.Install(new XpertGroup.CubeSummation.Services.DependencyResolution.Operator.OperatorInstaller());
+            ioc.Install(new XpertGroup.CubeSummation.Services.DependencyResolution.Orchestrator.OrchestratorInstaller());
             container.Kernel.Resolver.AddSubResolver(new CollectionResolver(container.Kernel));
             Container = container;
 

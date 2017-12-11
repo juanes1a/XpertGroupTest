@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using XpertGroup.Test.Domain.Entities;
+using XpertGroup.CubeSummation.Domain.Entities;
 
-namespace XpertGroup.Test.Application.Validator
+namespace XpertGroup.CubeSummation.Application.Validator
 {
     public class UpdateValidator : AbstractValidator<Update>
     {

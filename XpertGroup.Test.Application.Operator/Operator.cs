@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using XpertGroup.Test.Domain.Entities;
-using XpertGroup.Test.Domain.Interfaces;
+using XpertGroup.CubeSummation.Domain.Entities;
+using XpertGroup.CubeSummation.Domain.Interfaces;
 
-namespace XpertGroup.Test.Application.Operator
+namespace XpertGroup.CubeSummation.Application.Operator
 {
     public class Operator : IOperator
     {
